@@ -5,7 +5,15 @@
 * https://www.callicoder.com/spring-boot-flyway-database-migration-example/
 
 
-**@Todo List:**
+**@Hibernate Todo List**
+* setup basic Hibernate for H2
+* setup Hibernate for Postgresql
+* simple Service -> Repository -> Domain patern + Rest Service
+* Swagger for testing REST endpoint
+
+
+
+**@Flyway Todo List:**
 * setup Flyway with H2 and Postgresql
 * schema migration and data imports
 * data changes (field name / type changes)
