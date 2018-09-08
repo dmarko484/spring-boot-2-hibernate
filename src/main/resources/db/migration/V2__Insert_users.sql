@@ -1,0 +1,2 @@
+insert into users (id, first_name, last_name, email) values (1,'David','Marko','dmarko@tcl-digitrade.com');
+insert into users (id, first_name, last_name, email) values (2,'Jana','Wágnerová','jana@tcl-digitrade.com')
