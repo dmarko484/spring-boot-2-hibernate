@@ -1,17 +1,18 @@
 package app.modules.users.models;
 
 import app.modules.core.AbstractEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "profiles")
 public class Profile extends AbstractEntity {
 
     @OneToOne(fetch= FetchType.LAZY)
+    @JoinColumn(
+            name="user_id", unique=true, nullable=false, updatable=false)
+    @JsonIgnore
     User user;
 
     String education;

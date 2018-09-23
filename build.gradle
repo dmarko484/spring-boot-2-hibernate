@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '2.0.4.RELEASE'
+		springBootVersion = '2.0.5.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -11,9 +11,8 @@ buildscript {
 }
 
 plugins {
-	id "org.flywaydb.flyway" version "5.1.4"
+	//id "org.flywaydb.flyway" version "5.1.4"
 }
-
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
@@ -37,15 +36,28 @@ idea {
 }
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-actuator')
+	//compile('org.springframework.boot:spring-boot-starter-actuator')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	//compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-web')
 
-	compile('org.flywaydb:flyway-core:5.1.4')
+	//compile('org.flywaydb:flyway-core:5.1.4')
 
 	compile('io.springfox:springfox-swagger2:2.9.2')
 	compile('io.springfox:springfox-swagger-ui:2.9.2')
+
+
+	// https://medium.com/criciumadev/java-10-migration-5d853f5b5f7e
+	compile('org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.2.Final')
+	compile('org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.1.1.Final')
+
+	// https://itnext.io/java-10-migration-story-cdc65c05bb5a
+	compile("javax.xml.bind:jaxb-api:2.3.0")
+	compile("com.sun.xml.bind:jaxb-core:2.3.0.1")
+	compile("com.sun.xml.bind:jaxb-impl:2.3.0.1")
+	compile("javax.activation:activation:1.1.1")
+
+
 
 	runtime('org.springframework.boot:spring-boot-devtools')
 	runtime('com.h2database:h2')
@@ -55,11 +67,7 @@ dependencies {
 	testCompile('org.springframework.security:spring-security-test')
 }
 
-flyway {
-	url = 'jdbc:postgresql://localhost:5432/sb2_hibernate'
-	user = 'postgres'
-	password = 'lipa'
-}
+
 
 springBoot {
 	// addResources = true
